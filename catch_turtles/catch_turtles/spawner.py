@@ -15,11 +15,11 @@ class SpawnerClientNode(Node):
         self.turtle_arr = []
         self.turtle_list_publisher_= self.create_publisher(
             TurtleList, "turtle_list", 1)
-        self.timer_ = self.create_timer(1.0, self.publish_turtle_list)
+        self.timer_1 = self.create_timer(10.0, self.publish_turtle_list)
         self.get_logger().info("Turtle list publisher has started")
 
         self.idx = 1
-        self.timer_ = self.create_timer(5.0, self.call_spawn_client)
+        self.timer_2 = self.create_timer(10.0, self.call_spawn_client)
         
         self.server = self.create_service(
             TurtleDeath, "turtle_death", self.register_death)
